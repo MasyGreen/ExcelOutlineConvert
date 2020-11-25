@@ -47,7 +47,7 @@ def ParsingXLSX(in_file):
         row = {}
         row["Livel"] = cur_livel
         row["Row"] = i
-        for j in range(1, u_maxcol):
+        for j in range(1, u_maxcol+1):
             cells = sheet.cell(row=i, column=j).value if sheet.cell(row=i, column=j).value else ''
             row[f"Col{j}"] = str(cells).strip()
         print(f"{bcolors.FAIL}    {i}: {cur_livel} = {cells}; {row}")
@@ -182,4 +182,4 @@ if __name__ == '__main__':
     DataSetProcess = []
     main()
     print(f'{bcolors.HEADER}\n\n*All Process done. \n*Press Space to Exit ... It the longest shortcut \_(o0)_\...')
-    # keyboard.wait("space")
+    keyboard.wait("space")
